@@ -1,0 +1,25 @@
+DATE Command
+Here’s a small sample of the formatting tokens date supports:
+Token 	Output
+%a 	locale’s abbreviated weekday name (e.g., Sun)
+%A 	locale’s full weekday name (e.g., Sunday)
+%b 	locale’s abbreviated month name (e.g., Jan)
+%B 	locale’s full month name (e.g., January)
+%c 	locale’s date and time (e.g., Thu Mar 3 23:05:25 2005)
+%F 	full date; same as %Y-%m-%d
+%s 	seconds since 1970-01-01 00:00:00 UTC
+
+Override the Timezone
+  By default, date uses the timezone defined in /etc/localtime. The environment variable TZ can be used to override this behavior. For example:
+      $ TZ=GMT date
+      Fri Aug 20 15:15:36 GMT 2010
+  Valid timezones are defined in /usr/share/zoneinfo/.
+
+Epoch format:-
+  date has other surprising uses. For example, it can be used to convert a given date/time to Unix epoch time 
+  (seconds since 00:00:00, Jan 1, 1970) and back. The following example will show you the seconds from epoch to the current time:  
+  
+Other Examples:-
+  You can also use date to create filenames that contain the current day:
+    tar cfz /backup-`date +%F`.tar.gz /home/caker/   ------------------------------------>Type tar -xvf yourfile.tar to extract the file to the current directory. Or tar -C /myfolder -xvf yourfile.tar to extract to another directory.
+  This would tar and gzip the files in /home/caker/ into a filename called backup-2010-08-20.tar.gz.
