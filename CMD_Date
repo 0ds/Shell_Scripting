@@ -23,3 +23,7 @@ Other Examples:-
   You can also use date to create filenames that contain the current day:
     tar cfz /backup-`date +%F`.tar.gz /home/caker/   ------------------------------------>Type tar -xvf yourfile.tar to extract the file to the current directory. Or tar -C /myfolder -xvf yourfile.tar to extract to another directory.
   This would tar and gzip the files in /home/caker/ into a filename called backup-2010-08-20.tar.gz.
+
+Set the Date Manually from the Linux TerminalPermalink
+  If your system is running [ntpd], and you’ve set your timezone correctly, you shouldn’t have to change this setting. However, if you find you need to set the system clock manually, use the --set option. In this example, we’re setting the date and time to 9:14pm on Thursday, April 13, 2017:
+  # date --set="20170413 21:14"
