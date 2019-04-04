@@ -1,6 +1,7 @@
 case  in
    Pattern 1) Statement 1;;
    Pattern n) Statement n;;
+   *) Default Statement ;;
 esac
 
 EXAMPLE:-
@@ -17,3 +18,14 @@ case "$CARS" in
 	#case 3 
 	"bmw") echo "Headquarters - Chennai, Tamil Nadu, India" ;; 
 esac 
+
+
+---------
+Enample :-
+
+case $word in
+	[aeiou]* | [AEIOU]*) echo "the word begins with a vawel" ;; ---------------> | pipe says if first condition is not true do not quit but check for 2nd condition
+	[0-9]*) echo "the word begins with a digit" ;;
+	*[0-9]) echo "the word ends with a digit" ;;
+	*) echo "i dont know that you have entered ;;  ----------------------------> DEFAULT case 
+esac	
