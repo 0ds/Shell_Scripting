@@ -1,0 +1,36 @@
+echo attributes:-
+ -e ---> to decript \ syntax
+ \c ---> to take input in same line
+-----------------------------------------------------------
+Shorting:-
+ # short <file_name>
+ -----------------------------------------------------------
+CUT:-
+  # cut -d ":" -f1,3 <filename>
+-----------------------------------------------------------
+Positional Parameter:-
+  #!/bim/bash
+  mv $1 $2
+  echo `ls`
+# sh script.sh <old_filename>  <new_filename>
+-----------------------------------------------------------
+Reverse Quotes OR Accent Graves
+  set ----> set command is used to set  value of parameters
+   name=$1
+   set `who am i`             --------------------------------------> in this $name = the <file_name> argument which has been passed during script runup command
+                                                                          but , $1 = value returned from `who am i'; because, of set command
+   mv $name $name.$1
+# sh script.sh <file_name>
+------------------------------------------------------------
+To print total number of content in your directory
+  echo $#
+  # sh script.sh *
+  12
+-------------------------------------------------------------
+basic opeation                                                 OR            Binary calculator
+  echo `expr $1 + $2` ----> addition                                      echo $1 \* $2 | bc
+  echo `expr $2 \* $3`  ---> multiplication
+  / -----> division
+  - -----> substraction
+  % -----> modulus
+---------------------------------------------------------------
