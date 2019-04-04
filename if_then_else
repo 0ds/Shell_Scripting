@@ -3,8 +3,26 @@ Syntax:-
    then
      #satatement
   fi
-  
-------
+==================  
+-d ---> directory
+-L ---> link file
+
+Example:-
+1. to check t is wheater directory or link_file if so remove it
+if [ -d t ]; then 
+   if [ -L t ]; then 
+      rm t
+   else 
+      rmdir t
+   fi
+fi
+
+2.
+if [[ -d "${DIRECTORY}" && ! -L "${DIRECTORY}" ]] ; then
+    echo "It's a bona-fide directory"
+fi
+==================
+
 Shell Script:-
 1. to check wheather a script runs or not
 
