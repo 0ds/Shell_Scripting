@@ -1,3 +1,10 @@
+Syntax:-
+  if [    ]
+   then
+     #satatement
+  fi
+  
+------
 Shell Script:-
 1. to check wheather a script runs or not
 
