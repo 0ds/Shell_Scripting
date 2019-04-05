@@ -8,7 +8,7 @@ Token 	Output
 %b 	locale’s abbreviated month name (e.g., Jan)
 %B 	locale’s full month name (e.g., January)
 %c 	locale’s date and time (e.g., Thu Mar 3 23:05:25 2005)
-%F 	full date; same as %Y-%m-%d
+%F 	full date; same as %Y-%m-%d  -------------------------------> to ptint day-month-year>>>>>>   # echo `date +\%d-\%m-\%Y`
 %s 	seconds since 1970-01-01 00:00:00 UTC
 
 Override the Timezone
