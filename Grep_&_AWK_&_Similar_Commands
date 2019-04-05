@@ -1,0 +1,41 @@
+
+AWK:-
+
+1.  To print the third field of the fifth line:
+       # awk -F ":" 'FNR == 5 {print $3}' /etc/passwd 
+2.  Typical use
+       1. print 1st and 4th column
+              # awk '{print $1, $4}' file.txt
+       2. same with 'cat file.txt'
+              # awk '{print $0}' file.txt
+3.  -F: Set input field sparator
+       1. print 1st and 4th column separated by ':'
+              # awk -F ":" '{print $1, $4}' file.txt 
+4.  Pattern matching
+       1. print 2nd column when 1st field is precisely 'test'
+              # awk '$1 == "test" { print $2 }' file.txt
+       2. print 2nd column when 1st field contains 'test'
+              # awk '$1 ~ /
+              test/ { print $2 }' file.txt-------------------> [vagrant@localhost ~]$ sudo awk -F ":" '$1 == "root"  {print $0}' /etc/passwd
+                                                                root:x:0:0:root:/root:/bin/bash
+                                                               [vagrant@localhost ~]$ sudo awk -F ":" '$1 == "bin"  {print $0}' /etc/passwd
+                                                                bin:x:1:1:bin:/bin:/sbin/nologin
+                                                               [vagrant@localhost ~]$ sudo awk -F ":" '$1 == "bin"  {print $0}' /etc/passwd | awk -F ":" 'FNR == 1 {print $1}'
+                                                                bin
+
+                                                                             
+              
+       3. print 2nd column when 1st field DOES NOT contain 'test'
+              # awk '$1 !~ /test/ { print $2 }' file.txt
+       4. print 2nd column when this record contains 'test'
+              # awk '/test/ { print $2 }' file.txt
+       5. print 2nd column when this record DOES NOT contain 'test'
+              # awk '! /test/ { print $2 }' file.txt
+
+---------------------------------------------------------------------------------------
+GREP:--
+1. Get the pid of the process by using grep or you can use -C 
+       # ps -ef | -C 'filename'
+              or
+       # ps aux | grep 'filename'
+--------------------------------------------------------------------------------------- 
