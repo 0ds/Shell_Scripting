@@ -1,5 +1,7 @@
 DATE Command
-Here’s a small sample of the formatting tokens date supports:
+Here’s a small sample of the formatting tokens date supports:----------------->   To USe these option use syntax
+                                                                                    SYNTAX:-
+                                                                                        +\%a
 Token 	Output
 %a 	locale’s abbreviated weekday name (e.g., Sun)
 %A 	locale’s full weekday name (e.g., Sunday)
