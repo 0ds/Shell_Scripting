@@ -1,0 +1,9 @@
+DISK:-
+
+1. to view disk useage percentage
+    # df --output=pcent /dev/sdb4 | awk  'FNR == 2 {print $1}'
+    >>>>>> 86%
+2. to view disk useage in plain numbers format
+    # df --output=pcent /dev/sdb4 | tr -dc '0-9'
+    >>>>>> 86
+-------------------------------------------------------------------    
