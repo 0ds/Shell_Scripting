@@ -1,0 +1,29 @@
+#!/bin/bash
+_os_name=`awk -F '=' '$1 == "NAME" {print $2}' /etc/os-release   | tr "[:upper:]" "[:lower:]" | sed 's/ //' | tr -sd '\"' ''`
+echo "Your LINUX Desto. is= $_os_name"
+read -p "Enter the PHP version you want to install without dot [EXAMPLE 5.6=56 , 7.2=72]: " _php
+echo "PHP versions which you can choose to install are 5.5 5.6 and 7.2"
+os_redhat=(fedora redhat centos)
+
+while [ `echo $_php | tr -d [:digit:]` == . ]
+do
+        echo "ERROR you placed a dot:-------RE-INPUT------"
+        read -p "Enter the PHP version you want to install without dot [EXAMPLE 5.6=56 , 7.2=72]: " _php
+
+done
+
+for i in os_redhat[@]
+do
+        if (( $_os_name == $i ))
+        then
+                yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y \
+                && yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y \
+                && yum install yum-utils -y \
+                && yum-config-manager --enable remi-php$_php -y \
+                && yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+        else
+                echo " Sorry you have a debian desto."
+                break
+        fi
+done
+
