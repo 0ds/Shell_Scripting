@@ -1,6 +1,6 @@
 
 AWK:-
-
+       
 1.  To print the third field of the fifth line:
        # awk -F ":" 'FNR == 5 {print $3}' /etc/passwd 
 2.  Typical use
@@ -48,7 +48,22 @@ AWK:-
                      8--halt--/sbin/halt
 
        
+SUBSTR:--
+       substr(s, a, b) : it returns b number of chars from string s, starting at position a. The parameter b is optional, in which case it means up to the end of the string.
 
+For instance, consider a file with the following content:
+
+>>>>>>>>>>>>>>>   every good
+
+Let us save this data into a file called data.txt
+Then, here are a few case examples:
+
+Shell:-
+         COMMAND                              OUTPUT
+1. awk '{print substr($1,1,1)}' data.txt   #returns e
+2. awk '{print substr($1,3)   }' data.txt   #returns ery
+3. awk '{print substr($2,3)   }' data.txt   #returns od
+4. awk '{print substr($0,7,2) }' data.txt  #returns go
 ---------------------------------------------------------------------------------------
 GREP:--
 1. Get the pid of the process by using grep or you can use -C 
