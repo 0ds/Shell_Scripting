@@ -70,4 +70,15 @@ GREP:--
        # ps -ef | -C 'filename'
               or
        # ps aux | grep 'filename'
+2. # grep -q "^docker"        
+       -q = --quiet, --silent
+              Quiet; do not write anything to standard output.  Exit immediately with zero  status
+              if  any  match  is  found,
+        "^docker"--->    ^ ---->  	Matches the beginning of a line.
 --------------------------------------------------------------------------------------- 
+
+
+========= Tips & Tricks =========
+1.return error code such that 
+       # cut -d: -f 1 /etc/group | grep -q "^http" ; let x=$? ; echo $x 
+
