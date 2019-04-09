@@ -1,1 +1,2 @@
 1. Bash does not support floating-point arithmetic.
+2. /bin/sh doesn't handle redirection and wildcards together but bash.
