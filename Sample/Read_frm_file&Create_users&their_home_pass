@@ -1,0 +1,19 @@
+user_list.txt
+  acer:acer123:/home/acerhome:/bin/bash
+  dell:dell123:/home/dellhome:/sbin/nologin
+  
+--------------------------------------------------
+script.sh
+
+filename="user_list.txt"
+__user_name=(`awk -F: '{print $1}' "$filename"`)
+__password=(`awk -F: '{print $2}' "$filename"`)
+__user_home=(`awk -F: '{print $3}' "$filename"`)
+__user_shell=(`awk -F: '{print $4}' "$filename"`)
+x=0
+for user in ${__user_name[@]}
+do
+      useradd -N -d "${__user_home[$x]}" -s "${__user_shell[$x]}" -p "{__password[$x]}" "${__user_name[$x]}"
+      x=`expr $x + 1`
+
+done
