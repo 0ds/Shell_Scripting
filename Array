@@ -1,0 +1,66 @@
+searching:-
+Search Returns 1 if it found the pattern else it return zero. It does not alter the original array elements.
+# Search in Array 
+echo ${arr[@]/*[aA]*/}	 
+-----------------------------------
+To Search & Replace in Array
+# Replacing Substring Temporary 
+echo ${arr[@]//a/A}		 
+echo ${arr[@]}			 
+echo ${arr[0]//r/R}		 
+
+output:
+prAkhAr Ankit 1 rishAbh mAnish AbhinAv    
+prakhar ankit 1 rishabh manish abhinav
+RakhaR                                    ------------------------>     ORIGINAL TEXT
+                                                                      prakhar ankit 1 rishabh manish abhinav
+                                                                      prakhar ankit 1 rishabh manish abhinav
+                                                                      prakhar ankit 1 rishabh manish abhinav
+                                                                      prakhar ankit 1 rishabh manish abhinav
+---------------------------------
+size of array -------------> returns integer
+# Size of an Array 
+echo ${#arr[@]}         
+echo ${#arr[*]}  
+---------------------------------
+# To print elements in range 
+echo ${arr[@]:1:4}	 
+echo ${arr[@]:2:3}	 
+echo ${arr[0]:1:3}	 
+
+output:
+ankit 1 rishabh manish
+1 rishabh manish
+rak
+----------------------------
+# To print elements from a particular index 
+echo ${arr[@]:0}	 
+echo ${arr[@]:1} 
+echo ${arr[@]:2}	 
+echo ${arr[0]:1}	 
+ 
+output:
+prakhar ankit 1 rishabh manish abhinav
+ankit 1 rishabh manish abhinav
+1 rishabh manish abhinav
+prakhar
+---------------------------
+
+ 
+
+# !/bin/bash 
+# To declare static Array  
+arr=(1 12 31 4 5) 
+i=0 
+  
+# Loop upto size of array 
+# starting from index, i=0 
+while [ $i -lt ${#arr[@]} ] 
+do
+    # To print index, ith 
+    # element 
+    echo ${arr[$i]} 
+      
+    # Increment the i = i + 1 
+    i=`expr $i + 1` 
+done
